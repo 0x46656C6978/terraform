@@ -1,9 +1,5 @@
-module "global" {
-  source = "../global"
-}
-
 resource "google_compute_network" "vpc-production" {
-  project = module.global.project_id
+  project = var.project_id
   name = "vpc-production"
   description = "VPC for production services"
   routing_mode = "REGIONAL"

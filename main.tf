@@ -8,13 +8,9 @@ terraform {
 }
 
 provider "google" {
-  project = module.global.project_id
-  region  = module.global.project_region
-  zone    = module.global.project_zone
-}
-
-module "global" {
-  source = "./global"
+  project = var.project_id
+  region  = var.project_region
+  zone    = var.project_zone
 }
 
 module "iam" {

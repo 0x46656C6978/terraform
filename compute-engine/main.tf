@@ -1,10 +1,6 @@
-module "global" {
-  source = "../global"
-}
-
 resource "google_compute_instance" "backend-server" {
-  zone = module.global.project_zone
-  project = module.global.project_id
+  zone = var.project_zone
+  project = var.project_id
   name = "backend-server-e2-micro"
   machine_type = "e2-micro"
   network_interface {
